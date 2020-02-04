@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="GHstylesheet.css" rel="stylesheet">
+        <noscript>
+        <p id="notAvailable">Info: JavaScript wird nicht unterstützt oder ist nicht erwünscht... Schade.
+        </p>
+    </noscript>
+    <title>GH | Survey</title>
+</head>
+
+
+
+<body>
+    <header>
+        <h1> Game's Horizon </h1>
+        <h2> Survey </h2>
+
+        <nav>
+            <ul>
+                <li> <a href="index.html"> News </a> </li>
+                <li> <a href="GHsurvey.html"> Survey </a> </li>
+                <li> <a href="GHaboutus.html"> About Us </a> </li>
+                <li id="game"> <a href="GHminiGame.html"> Mini Game </a> </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+   <form id="form1" class="text" action="#"> <!--creating a form for user input, i.e. textfields, checkboxes, radio-buttons; used to pass user-data to a specified URL.-->
+
+        <fieldset> <!--to group of related elements in a form-->
+            <legend> Personal Data </legend> <!-- providing a title or explanatory caption for the rest of the contents of the legend -->
+
+            <label> Gender: </label>
+            <input type="radio" name="gender"> <label>Male</label>
+            <input type="radio" name="gender"> <label>Female</label>
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend> Gaming Habits </legend>
+            <ol>
+                <li>
+                    <label> How often do you play games?</label> <!--"radio" only 1 check in a box possible-->
+                    <input type="radio" name="time"> <label>never</label>
+                    <input type="radio" name="time"> <label>1-2 times a week</label>
+                    <input type="radio" name="time"> <label>3-4 times a week</label>
+                    <input type="radio" name="time"> <label>daily</label>
+                </li>
+            </ol>
+
+
+
+            <ol start="2"> <!--das es nicht 1. anzeigt obwol es die 2.Fragre ist-->
+                <li>
+                    <label> Which of these devices/consoles do you play your games on?</label><!--"checkbox multiple checks possible"-->
+                    <input type="checkbox" name="device"> <label>Nintendo</label>
+                    <input type="checkbox" name="device"> <label>Microsoft Xbox</label>
+                    <input type="checkbox" name="device"> <label>Sony Playstation</label>
+                    <input type="checkbox" name="device"> <label>PC</label>
+                    <input type="checkbox" name="device"> <label>Mobile</label>
+                    <input type="checkbox" name="device"> <label>Other</label>
+                </li>
+            </ol>
+
+        </fieldset>
+
+
+
+
+        <fieldset>
+            <legend> Feedback </legend>
+
+            <label> How would you evaluate our website?</label>
+            <span>0</span><input type="range" name="scale" min="0" max="10"><span>10</span> <!--"range ein Skalierleiste"-->
+
+            <label> Please give additional suggestion.</label>
+            <textarea id="textbox" rows="5" cols="40" placeholder="Comments. . ."></textarea> <!--Textfeld mit Reihen und Zeichen-->
+
+            <input type="checkbox" name="subscription">
+            <label>Yes, I want to subscribe to Newsletters.</label>
+
+            <label> E-Mail</label>
+            <input type="email" name="Email"> <!--email, nimmt nur email adresse an; Bedingungen @, .com-->
+        </fieldset>
+
+        <input type="submit" value="Submit" name="Submit" id="submission">
+        <input type="reset" value="Reset">
+
+
+
+    </form>
+
+
+<footer>
+
+    <p>While using this site, you agree to have read and accepted our terms of agreement, cookie and privacy policy.</p>
+    <p>Copyright 2017 by Game's Horizon. All Rights Reserved.</p>
+
+</footer>
+
+<script src="GHcontrol.js"></script>
+
+</body>
+</html>

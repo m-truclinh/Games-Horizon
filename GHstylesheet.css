@@ -1,0 +1,292 @@
+/* 1) Wir haben Desktop first genommen, weil wir es lieber haben zuerst auf unseren gewohnten Laptop Auflösung zu arbeiten.
+      Falls wir später für Mobilgeräte die Auflösung anpassen, können wir persönlich die Veränderungen besser erkennen.
+      Darüber hinaus lässt es sich gut am Desktopfenster die Auflösung experimentieren. Dies ist aber bisher unsere
+      persönliche Meinung. Jedoch wissen wir dass die Nachteile bei Desktop-first die Performance auf Mobilgeräten
+      verlangsamen könnte, weil nicht alle Mobilgeräte leistungsstark genug sind um alles auf dem Desktop wiederzugeben.
+      Dennoch ist es uns wichtiger auf unseren gewohnten Umfeld zu arbeiten und danach es anzupassen.
+
+ 2.1) Wenn wir "reset" einsetzen wird alles zum absoluten Anfang gesetzt. Mit Anfang meinen wir es wird zum absoluten
+      Standard gesetzt. Es wird jegliche Art von margins rausgenommen, Überschriftgewichtung welche die Überschrift
+      normalerweise hervorheben werden rausgenommen und beispielsweise die Punkte die vor jedem Stichpunkt bei list-items stehen
+      verschwinden auch. Sogesehen hat alles die gleiche Schriftgröße und kein Wort das geschrieben wird, wird wirklich
+      hervorgehoben. Einzig die links bleiben erhalten mit blau-violetter Schrift und Unterstrich.
+      => Die Vorteile die wir sehen konnten ist das man weiß, was jede einzelne Zeile von Code macht. Da wir selbst jede
+      einzelne Veränderung darin unternehmen und keine Standard Voreinstellungen haben, die möglicherweise unvorhergesehene Veränderungen
+      mit sich bringen könnte (wie fast jeder sicherlich mitbekommen hat und manchmal sogar keine Veränderung die man eigentlich gerne hätte).
+      => Die Nachteile sind wohl sicherlich mehr Arbeit die man sich sparen könnte, beispielsweise Änderungen wie
+      Überschriftgewichtung oder -größe kann man sich sparen, Bulletpoints und viel mehr.
+ 2.2) Wenn wir jedoch normalize benutzen, bewahrt es nützliche Elemente Browser-Standardstile. Das ist auch der
+      Hauptvorteil gegenüber dem reset welche einfach nahezu alles plattmacht. Denn man muss all die Stile der
+      allgemeinen typografischen Elemente nicht neu deklarieren. Beim normalize ist das Ziel diese Stile möglichst
+      konsistent und konform mit modernen Standards zu halten. Deshalb ist normalize heutzutage viel beliebter unter Web-Programmierern.
+*/
+
+
+
+
+@media screen and (min-device-width: 769px) {
+
+    *{
+        box-sizing: border-box;
+    }}
+
+
+#notAvailable{      /* falls JavaScript nicht geladen, anzeigen dass Spiele z.B. nicht möglich*/
+    font-size: 1em;
+    font-family: Constantia;
+    line-height: 1.2em;
+    text-align: center;  /*zentriert Text*/
+    border: hsla(0,0%,0%, 0.6) 1px solid; 
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+
+body{
+    background-color: 	hsl(173, 54%, 36%); /*hexadecimal color code*/
+    line-height: 1.5em; /*Zeilenabstand*/
+    margin: 0 auto; /*dieses Element dehnt sich nicht auf beiden Seiten seines Containers aus; "automatisch" zentriert*/
+    width: 66%; /*Weite die dieses Element einnimmt also 66% der Weite, 33% der Weite wird nicht benutzt*/
+}
+
+h1{
+    font-size: 4.0em; /*Schriftgröße */
+    text-align: center;
+    font-family: "Cooper Black"; /*solange die Schrift in MS Words gibt kann man in CSS importieren (Drop Down Box erscheint)*/
+}
+
+h2{
+    font-size: 3.0em;
+    text-align: center;
+    font-family: "Cooper Black";
+}
+
+h3{
+    font-size: 2.25em;
+    font-family: "Cooper Black";
+}
+
+h4{
+    font-size: 1.33em;
+    font-family: "Cooper Black";
+}
+
+a{
+    text-decoration: none; /*keine Unterstriche bei links mehr*/
+    color: hsl(180, 25%, 25%); /*weiße Schrift in links*/
+}
+
+ul {
+    list-style: none /* keine Punkte mehr Stichpunkte */
+}
+
+nav{
+    background-color: hsl(170, 95%, 93%); /*Farbe des Hintergundes bei der Navigation*/
+    border-radius: 0.3em; /*abgerundete Ecken des Navigationshintergrundes*/
+    font-size: 1.5em;
+    font-family: "Berlin Sans FB"; /*MS Words Fonts, Schriftarten schon installiert worden mit Words*/
+}
+
+nav a:link, nav a:visited, nav li {
+    display: inline-block; /*ein Blockelement hat whitespace ringsherum und toleriert keine htmlelement neben ihm
+    ein inline-block verhält sich als ein inline element(auf selben Zeile) aber verhält sich wie ein Blockelement*/
+    padding: 0.6em 0.6em; /*ohne padding gibt es keinen Abstand zwischen Schrift und Boxrand*/
+}
+
+nav a:hover, nav .active a:link {
+    background-color: lightgreen; /*147 css color names*/
+    transition: 2s; /* hintergrundveränderung bei hover über den links, wird grün in 2sec abstand*/
+}
+/*hover: wenn man mit Maus rüber geht das es orange wird; active Seite wird angezeigt*/
+
+main{
+    border-radius: 0.3em;
+    overflow: hidden;
+    background-color: hsl(360, 100%, 100%);
+    padding: 2.5em;
+}
+
+footer{
+    color: hsl(360, 100%, 100%);
+    border-radius: 0.3em;
+    overflow: hidden; /*overflow: was passiert wenn text die element box den text overflowed*/
+    background-color: #525252;
+    padding: 2.5em;
+    font-size: 1.15em;
+    font-family: Constantia;
+}
+
+q{
+    font-size: 125%;
+    font-family: Consolas;
+    color: mediumblue; /* 147 color names */
+}
+
+label{
+    display: block; /*bessere Übersichtlichkeit in Food Survey*/
+}
+
+form{
+    font-size: 1.4em;
+}
+
+label{ /* Beschriftung auf eigener Zeile */
+  display: block;
+  cursor: pointer; /* Mauszeiger wird zur Hand */
+    }
+
+input:focus, textarea:focus{
+  background-color: #d9d9d9;
+}
+
+fieldset{
+    margin: 1.23em 0em;
+}
+
+a[alt]{
+    color: dimgrey;
+}
+
+#link {
+    color: darkslateblue;
+    text-decoration: underline;
+}
+
+.author {
+    font-family: Consolas;
+    color: hsl(173, 54%, 36%);
+}
+
+.profile{
+    border-radius: 10em;
+    width: 20em;
+    animation: rotate 5s ease-in 1;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.pics{
+    width: 75em;
+}
+
+.text{
+    font-size: 1.5em;
+    font-family: Constantia;
+    line-height: 1.2em;
+}
+
+
+
+@media screen and (max-device-width: 768px){
+
+    @keyframes rotate{
+
+    }
+
+body {
+    width: 100%;
+}
+
+.pics{
+    width: 100%;
+}
+
+.profile{
+    width:50%;
+    border-radius: 25em;
+}
+
+nav li{
+    display: block;
+    text-align: center;
+    font-size: 3em;
+}
+    
+[href="#top"] {     /* alles für Pfeil*/
+    font-size: 6em;
+    color: hsl(0, 0%, 0%);   
+    position: fixed; /* pfeil bleibt die ganze Zeit fixed auf Seite */
+    right: 0;
+    bottom: 50%;
+    width: 1.5em;
+    margin-bottom: -8.5em;
+    }
+
+/*folgendes: für Formular*/ 
+    
+fieldset legend { 
+    color: hsl(1, 100%, 100%);
+    padding: 5px 10px ;
+    font-size: 3em;
+    border-radius: 15px;
+    box-shadow: 0 0 0 5px;
+    margin-left: 20px;
+    line-height: 1.2em;
+    }
+
+fieldset label {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    }
+
+fieldset span {
+    font-size: 2em;
+}
+    
+input {
+    font-size: 3em;
+    }
+    
+input[type="email"] {
+    width: 55%;
+    font-size: 2em;
+    }
+
+input[type="range"] {
+    width: 55%;
+}
+    
+input[type="checkbox"] {
+    width: 20%;
+    height: 1em;
+    }
+    
+input[type="radio"] {
+    width: 20%;
+    height: 1em;
+    }
+
+textarea {
+    font-size: 2em;
+    }
+
+}
+
+/* CSS für MiniGame-Seite */
+
+.underlineGame {
+    text-decoration: underline;
+}
+
+.gamingPics {
+    width:25%;
+    margin-right: 40px;
+    margin-left: 15px;
+    line-height: 1.5em;
+}
+
+.gamingText {
+    font-size: 1.5em;
+    font-family: Constantia;
+    line-height: 1.2em;
+    text-align: center;
+    font-weight: bold;
+}
